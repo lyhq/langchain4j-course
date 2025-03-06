@@ -1,6 +1,7 @@
 package com.pig4cloud.ai.langchain4j09function.config;
 
 import com.pig4cloud.ai.langchain4j09function.service.FunctionAssistant;
+import com.pig4cloud.ai.langchain4j09function.service.InvoiceHandler;
 import dev.langchain4j.agent.tool.ToolSpecification;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatLanguageModel;
@@ -12,6 +13,8 @@ import dev.langchain4j.service.tool.ToolProviderRequest;
 import dev.langchain4j.service.tool.ToolProviderResult;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Map;
 
 import static dev.langchain4j.agent.tool.JsonSchemaProperty.description;
 import static dev.langchain4j.agent.tool.JsonSchemaProperty.type;
@@ -28,7 +31,7 @@ public class LLMConfig {
         return OpenAiChatModel.builder()
                 .apiKey(System.getenv("DASHSCOPE_KEY"))
                 .modelName("qwen-turbo")  // 设置使用的模型名称
-                .logRequests(true)
+                .logRequests(true) // 打印请求日志
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .build();
     }
@@ -53,8 +56,8 @@ public class LLMConfig {
 
         return AiServices.builder(FunctionAssistant.class)
                 .chatLanguageModel(chatLanguageModel)
-                //.tools(Map.of(toolSpecification, toolExecutor))
-                //.tools(new InvoiceHandler())
+//                .tools(Map.of(toolSpecification, toolExecutor))
+//                .tools(new InvoiceHandler())
                 .toolProvider(new ToolProvider() {
                     @Override
                     public ToolProviderResult provideTools(ToolProviderRequest request) {

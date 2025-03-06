@@ -21,7 +21,7 @@ public class LLMConfig {
         return OpenAiChatModel.builder()
                 .apiKey(System.getenv("DASHSCOPE_KEY"))
                 .modelName("qwen-turbo")  // 设置使用的模型名称
-                .logRequests(true)
+                .logRequests(true) // 设置是否记录请求日志
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .build();
     }

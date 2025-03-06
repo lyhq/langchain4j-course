@@ -30,6 +30,7 @@ class LLMConfigTest {
         byte[] byteArray = resource.getContentAsByteArray();
         String encodeToString = Base64.getEncoder().encodeToString(byteArray);
 
+        // 构建一个包含图片的 多模态 UserMessage
         UserMessage userMessage = UserMessage.from(TextContent.from("从以下图片中获取 9.30号的上证指数"),
                 ImageContent.from(encodeToString,"image/png"));
 

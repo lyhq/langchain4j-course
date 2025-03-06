@@ -24,11 +24,11 @@ public class LLMConfig {
         return OpenAiChatModel.builder()
                 .apiKey(System.getenv("DASHSCOPE_KEY"))
                 .modelName("qwen-turbo")
-                .logRequests(true)
-                .logResponses(true)
-                .maxRetries(1)
-                .timeout(Duration.ofSeconds(10))
-                .listeners(List.of(new TestChatModelListener()))
+                .logRequests(true) // 打印请求日志
+                .logResponses(true) // 打印响应日志
+                .maxRetries(1) // 最大重试次数
+                .timeout(Duration.ofSeconds(10)) // 超时时间
+                .listeners(List.of(new TestChatModelListener())) // 监听器
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .build();
     }

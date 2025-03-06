@@ -16,7 +16,7 @@ class ChatAssistantTest {
     @Test
     void chat() {
 
-        String chat = chatAssistant.chat("hello, 北京有什么好吃的？");
+        String chat = chatAssistant.chat("hello, 福州有什么好吃的？");
 
         System.out.println(chat);
     }

@@ -18,7 +18,7 @@ class LLMConfigTest {
     @Test
     void streamingChatLanguageModel() throws InterruptedException {
 
-        streamingChatLanguageModel.generate("hello, 北京有什么好吃的？", new StreamingResponseHandler<AiMessage>() {
+        streamingChatLanguageModel.generate("hello, 福州有什么好吃的？", new StreamingResponseHandler<AiMessage>() {
             @Override
             public void onNext(String token) {
                 System.out.println(token);

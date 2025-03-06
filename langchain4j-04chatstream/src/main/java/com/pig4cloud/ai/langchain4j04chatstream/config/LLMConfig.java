@@ -25,10 +25,10 @@ public class LLMConfig {
         return OpenAiChatModel.builder()
                 .apiKey(System.getenv("DASHSCOPE_KEY"))
                 .modelName("qwen-turbo")
-                .logRequests(true)
-                .logResponses(true)
-                .maxRetries(1)
-                .timeout(Duration.ofSeconds(10))
+                .logRequests(true) // 打印请求日志
+                .logResponses(true) // 打印响应日志
+                .maxRetries(1) // 重试次数
+                .timeout(Duration.ofSeconds(10)) // 超时时间
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .build();
     }
@@ -38,7 +38,7 @@ public class LLMConfig {
         return OpenAiStreamingChatModel.builder()
                 .apiKey(System.getenv("DASHSCOPE_KEY"))
                 .modelName("qwen-turbo")
-                .timeout(Duration.ofSeconds(10))
+                .timeout(Duration.ofSeconds(10)) // 超时时间
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .build();
     }

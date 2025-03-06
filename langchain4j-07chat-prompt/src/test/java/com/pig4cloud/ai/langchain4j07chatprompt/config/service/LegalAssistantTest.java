@@ -39,7 +39,7 @@ class LegalAssistantTest {
         Prompt prompt = template.apply("知识产权");
         System.out.println(prompt.text()); // 输出: 请解释中国法律中的'知识产权'概念。
 
-// apply 方法接受 Map 作为参数
+        // apply 方法接受 Map 作为参数
         PromptTemplate template2 = PromptTemplate.from("请解释中国法律中的'{{legal1}}'概念。");
         Prompt prompt2 = template2.apply(Map.of("legal1", "知识产权"));
         System.out.println(prompt2.text());

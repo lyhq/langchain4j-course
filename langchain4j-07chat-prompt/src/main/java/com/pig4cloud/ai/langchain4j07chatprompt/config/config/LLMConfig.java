@@ -19,7 +19,7 @@ public class LLMConfig {
         return OpenAiChatModel.builder()
                 .apiKey(System.getenv("DASHSCOPE_KEY"))
                 .modelName("qwen-long")  // 设置使用的模型名称
-                .logRequests(true)
+                .logRequests(true) // 开启日志记录
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .build();
     }

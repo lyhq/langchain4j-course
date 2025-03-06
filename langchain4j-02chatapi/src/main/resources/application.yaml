@@ -1,1 +1,3 @@
-spring.application.name=langchain4j-02chatapi
+spring:
+  application:
+    name: langchain4j-02chatapi
