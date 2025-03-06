@@ -40,7 +40,7 @@ class Langchain4j14SensitiveTest {
         // 查找第一个敏感词
         String firstWord = SensitiveWordHelper.findFirst(text);
 
-// 查找所有敏感词
+        // 查找所有敏感词
         List<String> allWords = SensitiveWordHelper.findAll(text);
 
         System.out.println(allWords);
